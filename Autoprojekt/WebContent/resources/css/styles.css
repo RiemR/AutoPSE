@@ -1,0 +1,368 @@
+body {
+	font-family: 'Muli', sans-serif;
+}
+
+p {
+	color: rgb(117, 117, 117);
+}
+/**
+* Header-Bereich
+**/
+.header {
+	height: 620px;
+	background-image: url("../img/Auto.jpeg");
+	background-size: cover;
+	background-position: 0em 3.6em;
+}
+
+.container-header {
+	width: 94%;
+	max-width: 480em;
+}
+
+.checkbox {
+	margin-top: 65px;
+}
+
+.header-navbar-liste {
+	color: white;
+	float: right;
+	margin-top: 18px;
+	text-shadow: 0px 0px 5px black;
+}
+
+.header-navbar-liste li {
+	float: left;
+	list-style-type: none;
+	margin-left: 18px;
+	font-size: 105%
+}
+
+.header-navbar-liste a {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
+.header-brand {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 150%;
+	margin-top: -4%;
+	margin-left: 15% display: block;
+}
+
+.header-brand-wrapper {
+	margin-top: 20px;
+	float: left;
+}
+
+.suchen-button {
+	margin-left: 0.8em;
+}
+
+.slogan {
+	color: white;
+	text-align: center;
+	padding-top: 10em;
+	padding-right: 10em;
+	text-shadow: 0px 0px 5px black;
+}
+
+.slogan-top {
+	font-size: 230%;
+	font-weight: bold;
+}
+
+.slogan-buttom {
+	font-size: 230%;
+	font-weight: bold;
+}
+
+.slogan-button {
+	color: white;
+	text-shadow: 0px 0px 7px black;
+	margin-top: 10px;
+	margin-left: -0.5em;
+}
+
+.slogan-button a {
+	color: white;
+}
+
+.slogan-button:hover {
+	color: white;
+	text-shadow: 0px 0px 2px black;
+}
+
+/**
+* Service- Bereich
+*/
+.service {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+.service-gray {
+	background-color: rgb(245, 245, 245);
+}
+
+.service h1 {
+	color: rgb(30, 30, 30)
+}
+
+.service p {
+	color: rgb(117, 117, 117)
+}
+
+.wunschauto {
+	font-weight: bold;
+	font-size: 110%;
+}
+
+.service-icon {
+	font-size: 1500%;
+	color: rgb(241, 189, 129);
+	margin-left: 50px;
+}
+
+.service-icon-zwei {
+	font-size: 1500%;
+	color: rgb(161, 219, 195);
+	text-align: left;
+	padding-top: 30px;
+}
+
+.Fahrzeug-Verkaufen-check {
+	padding-top: 20px;
+	font-size: 120%;
+}
+
+.zurück-zu-home p, a {
+	color: rgb(210, 210, 210);
+	text-decoration: none;
+	font-weight: bold;
+	text-align: right;
+	margin-bottom: 0px;
+}
+
+/**
+*Feature- Bereich
+*/
+.features {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+.feature-icon {
+	width: 70px;
+	height: 60px;
+	padding-top: 10px;
+	background-color: rgb(30, 30, 30);
+	border-radius: 35px;
+	color: white;
+	text-align: center;
+	font-size: 30px;
+	float: left;
+}
+
+.feature-text {
+	margin-left: 90px;
+}
+
+.feature-text h5 {
+	margin-bottom: 8px;
+	font-size: 200%;
+	color: rgb(30, 30, 30);
+}
+
+.feature-text p {
+	color: rgb(117, 117, 117);
+}
+
+/**
+* Clients..
+**/
+.clients {
+	padding-top: 80px;
+	padding-bottom: 108px;
+	background-color: rgb(245, 245, 245);
+}
+
+.clients-header {
+	font-weight: lighter;
+	margin-bottom: 0px;
+	text-align: center;
+}
+
+.clients-subheading {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.client-image {
+	width: 100%;
+	height: 100%;
+	border-radius: 100000px;
+	border: 5px solid rgb(255, 255, 255);
+}
+
+.client-quote {
+	border: 2px solid rgb(235, 235, 235);
+	background-color: rgb(255, 255, 255);
+	padding-left: 75px;
+	padding-right: 75px;
+	padding-bottom: 0px;
+	padding-top: 25px;
+	font-size: 120%;
+	font-style: italic;
+	position: relative;
+}
+
+.client-quote-name {
+	font-style: normal;
+	font-size: 75%;
+	color: rgb(119, 147, 197);
+	padding-bottom: 5px;
+}
+
+.client-quote::before {
+	content: "";
+	display: block;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	top: 50%;
+	left: -32px;
+	margin-top: -16px;
+	border-top: 16px solid transparent;
+	border-left: 16px solid transparent;
+	border-bottom: 16px solid transparent;
+	border-right: 16px solid rgb(235, 235, 235);
+}
+
+.client-quote::after {
+	content: "";
+	display: block;
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	top: 50%;
+	left: -26px;
+	margin-top: -13px;
+	border-top: 13px solid transparent;
+	border-left: 13px solid transparent;
+	border-bottom: 13px solid transparent;
+	border-right: 13px solid rgb(255, 255, 255);
+}
+
+.client-quote-left::before {
+	right: -30px;
+	left: auto;
+	margin-top: -13px;
+	border: 15px solid transparent;
+	border-left: 15px solid rgb(235, 235, 235);
+}
+
+.client-quote-left::after {
+	right: -26px;
+	left: auto;
+	margin-top: -13px;
+	border: 13px solid transparent;
+	border-left: 13px solid rgb(255, 255, 255);
+}
+/**
+* Bewerten
+**/
+.bewerten {
+	height: 680px;
+	background-image: url("../img/header-background2.jpg");
+	background-size: cover;
+}
+
+/**
+* Contact..
+**/
+.contact {
+	background-color: rgb(130, 156, 214);
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.contact-heading {
+	color: white;
+	margin-bottom: 15px;
+	font-weight: lighter;
+}
+
+.contact-subheading {
+	color: white;
+	font-weight: lighter;
+	padding-bottom: 20px;
+}
+
+.contact-methods {
+	color: white;
+	list-style-type: none;
+}
+
+.contact-methods li {
+	width: 50%;
+	float: left;
+	font-weight: lighter;
+	height: 3em;
+}
+
+.contact-methods .fas, .fab {
+	font-size: 170%;
+}
+
+.contact-icon {
+	display: inline-block;
+	text-align: center;
+}
+
+.contact-input {
+	width: 100%;
+	margin-bottom: 28px;
+}
+
+.contact-message {
+	height: 140px;
+}
+
+input.contact-submit[type="submit"] {
+	background-color: rgb(255, 255, 255);
+}
+
+.contact-form {
+	margin-bottom: 0px;
+}
+/**
+* Footer..
+**/
+.footer {
+	background-color: rgb(118, 143, 197);
+	text-align: center;
+	font-weight: lighter;
+}
+
+.footer p {
+	color: rgb(255, 255, 255);
+}
+
+.footer-hr {
+	margin-top: 0px;
+	margin-bottom: 25px;
+}
+
+.footer a {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
+.zurück-zu-home {
+	text-align: right;
+	text-decoration: none;
+	color: rgb(110, 110, 0);
+}

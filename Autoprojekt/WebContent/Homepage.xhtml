@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<head>
+<title>Auto suchen</title>
+<style>
+body {
+	font-family: 'Muli', sans-serif;
+}
+p {
+	color: rgb(117, 117, 117);
+}
+/**
+* Header-Bereich
+**/
+.header {
+	height: 620px;
+	background-image: url("resources/img/Auto.jpeg");
+	background-size: cover;
+	background-position: 0em 3.6em;
+}
+.container-header {
+	widt 94%;
+	max-widt 480em;
+}
+.checkbox {
+	margin-to 65px;
+}
+.header-navbar-liste {
+	color: white;
+	float: right;
+	margin-to 18px;
+	text-shadow: 0px 0px 5px black;
+}
+.header-navbar-liste li {
+	float: left;
+	list-style-type: none;
+	margin-left: 18px;
+	font-size: 105%
+}
+.header-navbar-liste a {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+.header-brand {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 150%;
+	margin-to -4%;
+	margin-left: 15% display: block;
+}
+.header-brand-wrapper {
+	margin-to 20px;
+	float: left;
+}
+.suchen-button {
+	margin-left: 0.8em;
+}
+.slogan {
+	color: white;
+	text-align: center;
+	padding-to 10em;
+	padding-right: 10em;
+	text-shadow: 0px 0px 5px black;
+}
+.slogan-top {
+	font-size: 230%;
+	font-weight: bold;
+}
+.slogan-buttom {
+	font-size: 230%;
+	font-weight: bold;
+}
+.slogan-button {
+	color: white;
+	text-shadow: 0px 0px 7px black;
+	margin-to 10px;
+	margin-left: -0.5em;
+}
+.slogan-button a {
+	color: white;
+}
+.slogan-button:hover {
+	color: white;
+	text-shadow: 0px 0px 2px black;
+}
+/**
+* Service- Bereich
+*/
+.service {
+	padding-to 60px;
+	padding-bottom: 60px;
+}
+.service-gray {
+	background-color: rgb(245, 245, 245);
+}
+.service h1 {
+	color: rgb(30, 30, 30)
+}
+.service p {
+	color: rgb(117, 117, 117)
+}
+.wunschauto {
+	font-weight: bold;
+	font-size: 110%;
+}
+.service-icon {
+	font-size: 1500%;
+	color: rgb(241, 189, 129);
+	margin-left: 50px;
+}
+.service-icon-zwei {
+	font-size: 1500%;
+	color: rgb(161, 219, 195);
+	text-align: left;
+	padding-to 30px;
+}
+.Fahrzeug-Verkaufen-check {
+	padding-to 20px;
+	font-size: 120%;
+}
+.zurÃ¼ck-zu-home p, a {
+	color: rgb(210, 210, 210);
+	text-decoration: none;
+	font-weight: bold;
+	text-align: right;
+	margin-bottom: 0px;
+}
+/**
+*Feature- Bereich
+*/
+.features {
+	padding-to 80px;
+	padding-bottom: 80px;
+}
+.feature-icon {
+	widt 70px;
+	height: 60px;
+	padding-to 10px;
+	background-color: rgb(30, 30, 30);
+	border-radius: 35px;
+	color: white;
+	text-align: center;
+	font-size: 30px;
+	float: left;
+}
+.feature-text {
+	margin-left: 90px;
+}
+.feature-text h5 {
+	margin-bottom: 8px;
+	font-size: 200%;
+	color: rgb(30, 30, 30);
+}
+.feature-text p {
+	color: rgb(117, 117, 117);
+}
+/**
+* Clients..
+**/
+.clients {
+	padding-to 80px;
+	padding-bottom: 108px;
+	background-color: rgb(245, 245, 245);
+}
+.clients-header {
+	font-weight: lighter;
+	margin-bottom: 0px;
+	text-align: center;
+}
+.clients-subheading {
+	text-align: center;
+	margin-bottom: 50px;
+}
+.client-image {
+	widt 100%;
+	height: 100%;
+	border-radius: 100000px;
+	border: 5px solid rgb(255, 255, 255);
+}
+.client-quote {
+	border: 2px solid rgb(235, 235, 235);
+	background-color: rgb(255, 255, 255);
+	padding-left: 75px;
+	padding-right: 75px;
+	padding-bottom: 0px;
+	padding-to 25px;
+	font-size: 120%;
+	font-style: italic;
+	position: relative;
+}
+.client-quote-name {
+	font-style: normal;
+	font-size: 75%;
+	color: rgb(119, 147, 197);
+	padding-bottom: 5px;
+}
+.client-quote::before {
+	content: "";
+	display: block;
+	widt 0px;
+	height: 0px;
+	position: absolute;
+	to 50%;
+	left: -32px;
+	margin-to -16px;
+	border-to 16px solid transparent;
+	border-left: 16px solid transparent;
+	border-bottom: 16px solid transparent;
+	border-right: 16px solid rgb(235, 235, 235);
+}
+.client-quote::after {
+	content: "";
+	display: block;
+	widt 0px;
+	height: 0px;
+	position: absolute;
+	to 50%;
+	left: -26px;
+	margin-to -13px;
+	border-to 13px solid transparent;
+	border-left: 13px solid transparent;
+	border-bottom: 13px solid transparent;
+	border-right: 13px solid rgb(255, 255, 255);
+}
+.client-quote-left::before {
+	right: -30px;
+	left: auto;
+	margin-to -13px;
+	border: 15px solid transparent;
+	border-left: 15px solid rgb(235, 235, 235);
+}
+.client-quote-left::after {
+	right: -26px;
+	left: auto;
+	margin-to -13px;
+	border: 13px solid transparent;
+	border-left: 13px solid rgb(255, 255, 255);
+}
+/**
+* Bewerten
+**/
+.bewerten {
+	height: 680px;
+	background-image: url("resources/img/header-background2.jpg");
+	background-size: cover;
+}
+/**
+* Contact..
+**/
+.contact {
+	background-color: rgb(130, 156, 214);
+	padding-to 100px;
+	padding-bottom: 100px;
+}
+.contact-heading {
+	color: white;
+	margin-bottom: 15px;
+	font-weight: lighter;
+}
+.contact-subheading {
+	color: white;
+	font-weight: lighter;
+	padding-bottom: 20px;
+}
+.contact-methods {
+	color: white;
+	list-style-type: none;
+}
+.contact-methods li {
+	widt 50%;
+	float: left;
+	font-weight: lighter;
+	height: 3em;
+}
+.contact-methods .fas, .fab {
+	font-size: 170%;
+}
+.contact-icon {
+	display: inline-block;
+	text-align: center;
+}
+.contact-input {
+	widt 100%;
+	margin-bottom: 28px;
+}
+.contact-message {
+	height: 140px;
+}
+input.contact-submit[type="submit"] {
+	background-color: rgb(255, 255, 255);
+}
+.contact-form {
+	margin-bottom: 0px;
+}
+/**
+* Footer..
+**/
+.footer {
+	background-color: rgb(118, 143, 197);
+	text-align: center;
+	font-weight: lighter;
+}
+.footer p {
+	color: rgb(255, 255, 255);
+}
+.footer-hr {
+	margin-to 0px;
+	margin-bottom: 25px;
+}
+.footer a {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+.zurÃ¼ck-zu-home {
+	text-align: right;
+	text-decoration: none;
+	color: rgb(110, 110, 0);
+}
+/*
+* Skeleton V2.0.4
+* Copyright 2014, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* htt//www.opensource.org/licenses/mit-license.php
+* 12/29/2014
+*/
+/* Table of contents
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“
+- Grid
+- Base Styles
+- Typography
+- Links
+- Buttons
+- Forms
+- Lists
+- Code
+- Tables
+- Spacing
+- Utilities
+- Clearing
+- Media Queries
+*/
+/* Grid
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
+.container {
+	position: relative;
+	widt 100%;
+	max-widt 960px;
+	margin: 0 auto;
+	padding: 0 15px;
+	box-sizing: border-box;
+}
+.column, .columns {
+	widt 100%;
+	float: left;
+	box-sizing: border-box;
+}
+/* For devices larger than 400px */
+@media ( min-width : 400px) {
+	.container {
+		widt 94%;
+		padding: 0;
+	}
+}
+/* For devices larger than 550px */
+@media ( min-width : 550px) {
+	.container {
+		widt 97%;
+	}
+	.column, .columns {
+		margin-left: 4%;
+	}
+	.column:first-child, .columns:first-child {
+		margin-left: 0;
+	}
+	.one.column, .one.columns {
+		widt 4.66666666667%;
+	}
+	.two.columns {
+		widt 13.3333333333%;
+	}
+	.three.columns {
+		widt 22%;
+	}
+	.four.columns {
+		widt 30.6666666667%;
+	}
+	.five.columns {
+		widt 39.3333333333%;
+	}
+	.six.columns {
+		widt 48%;
+	}
+	.seven.columns {
+		widt 56.6666666667%;
+	}
+	.eight.columns {
+		widt 65.3333333333%;
+	}
+	.nine.columns {
+		widt 74.0%;
+	}
+	.ten.columns {
+		widt 82.6666666667%;
+	}
+	.eleven.columns {
+		widt 91.3333333333%;
+	}
+	.twelve.columns {
+		widt 100%;
+		margin-left: 0;
+	}
+	.one-third.column {
+		widt 30.6666666667%;
+	}
+	.two-thirds.column {
+		widt 65.3333333333%;
+	}
+	.one-half.column {
+		widt 48%;
+	}
+	/* Offsets */
+	.offset-by-one.column, .offset-by-one.columns {
+		margin-left: 8.66666666667%;
+	}
+	.offset-by-two.column, .offset-by-two.columns {
+		margin-left: 17.3333333333%;
+	}
+	.offset-by-three.column, .offset-by-three.columns {
+		margin-left: 26%;
+	}
+	.offset-by-four.column, .offset-by-four.columns {
+		margin-left: 34.6666666667%;
+	}
+	.offset-by-five.column, .offset-by-five.columns {
+		margin-left: 43.3333333333%;
+	}
+	.offset-by-six.column, .offset-by-six.columns {
+		margin-left: 52%;
+	}
+	.offset-by-seven.column, .offset-by-seven.columns {
+		margin-left: 60.6666666667%;
+	}
+	.offset-by-eight.column, .offset-by-eight.columns {
+		margin-left: 69.3333333333%;
+	}
+	.offset-by-nine.column, .offset-by-nine.columns {
+		margin-left: 78.0%;
+	}
+	.offset-by-ten.column, .offset-by-ten.columns {
+		margin-left: 86.6666666667%;
+	}
+	.offset-by-eleven.column, .offset-by-eleven.columns {
+		margin-left: 95.3333333333%;
+	}
+	.offset-by-one-third.column, .offset-by-one-third.columns {
+		margin-left: 34.6666666667%;
+	}
+	.offset-by-two-thirds.column, .offset-by-two-thirds.columns {
+		margin-left: 69.3333333333%;
+	}
+	.offset-by-one-half.column, .offset-by-one-half.columns {
+		margin-left: 52%;
+	}
+}
+/* Base Styles
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
+/* NOTE
+html is set to 62.5% so that all the REM measurements throughout Skeleton
+are based on 10px sizing. So basically 1.5rem = 15px :) */
+html {
+	font-size: 62.5%;
+}
+body {
+	font-size: 1.5em;
+	/* currently ems cause chrome bug misinterpreting rems on body element */
+	line-height: 1.6;
+	font-weight: 400;
+	font-family: "Raleway", "HelveticaNeue",
+	"Helvetica Neue", Helvetica,
+		Arial, sans-serif;
+	color: #222;
+}
+/* Typography
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
+h1, h2, h3, h4, h5, h6 {
+	margin-to 0;
+	margin-bottom: 2rem;
+	font-weight: 300;
+}
+h1 {
+	font-size: 4.0rem;
+	line-height: 1.2;
+	letter-spacing: -.1rem;
+}
+h2 {
+	font-size: 3.6rem;
+	line-height: 1.25;
+	letter-spacing: -.1rem;
+}
+h3 {
+	font-size: 3.0rem;
+	line-height: 1.3;
+	letter-spacing: -.1rem;
+}
+h4 {
+	font-size: 2.4rem;
+	line-height: 1.35;
+	letter-spacing: -.08rem;
+}
+h5 {
+	font-size: 1.8rem;
+	line-height: 1.5;
+	letter-spacing: -.05rem;
+}
+h6 {
+	font-size: 1.5rem;
+	line-height: 1.6;
+	letter-spacing: 0;
+}
+/* Larger than phablet */
+@media ( min-width : 550px) {
+	h1 {
+		font-size: 5.0rem;
+	}
+	h2 {
+		font-size: 4.2rem;
+	}
+	h3 {
+		font-size: 3.6rem;
+	}
+	h4 {
+		font-size: 3.0rem;
+	}
+	h5 {
+		font-size: 2.4rem;
+	}
+	h6 {
+		font-size: 1.5rem;
+	}
+}
+p {
+	margin-to 0;
+}
+/* Links
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
+a {
+	color: #1EAEDB;
+}
+a:hover {
+	color: #0FA0CE;
+}
+/* Buttons
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
+.button, button, input[type="submit"], input[type="reset"], input[type="button"]
+	{
+	display: inline-block;
+	height: 38px;
+	padding: 0 30px;
+	color: #555;
+	text-align: center;
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 38px;
+	letter-spacing: .2rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	white-space: nowrap;
+	background-color: transparent;
+	border-radius: 4px;
+	border: 3px solid #bbb;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover,
+	input[type="button"]:hover, .button:focus, button:focus, input[type="submit"]:focus,
+	input[type="reset"]:focus, input[type="button"]:focus {
+	color: #333;
+	border-color: #888;
+	outline: 0;
+}
+.button.button-primary, button.button-primary, input[type="submit"].button-primary,
+	input[type="reset"].button-primary, input[type="button"].button-primary
+	{
+	color: #FFF;
+	background-color: #33C3F0;
+	border-color: #33C3F0;
+}
+.button.button-primary:hover, button.button-primary:hover, input[type="submit"].button-primary:hover,
+	input[type="reset"].button-primary:hover, input[type="button"].button-primary:hover,
+	.button.button-primary:focus, button.button-primary:focus, input[type="submit"].button-primary:focus,
+	input[type="reset"].button-primary:focus, input[type="button"].button-primary:focus
+	{
+	color: #FFF;
+	background-color: #1EAEDB;
+	border-color: #1EAEDB;
+}
+/* Forms
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
+input[type="email"], input[type="number"], input[type="search"], input[type="text"],
+	input[type="tel"], input[type="url"], input[type="password"], textarea,
+	select {
+	height: 38px;
+	padding: 6px 10px;
+	/* The 6px vertically centers text on FF, ignored by Webkit */
+	background-color: #fff;
+	border: 1px solid #D1D1D1;
+	border-radius: 4px;
+	box-shadow: none;
+	box-sizing: border-box;
+}
+/* Removes awkward default styles on some inputs for iOS */
+input[type="email"], input[type="number"], input[type="search"], input[type="text"],
+	input[type="tel"], input[type="url"], input[type="password"], textarea
+	{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+textarea {
+	min-height: 65px;
+	padding-to 6px;
+	padding-bottom: 6px;
+}
+input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus,
+	input[type="text"]:focus, input[type="tel"]:focus, input[type="url"]:focus,
+	input[type="password"]:focus, textarea:focus, select:focus {
+	border: 1px solid #33C3F0;
+	outline: 0;
+}
+label, legend {
+	display: block;
+	margin-bottom: .5rem;
+	font-weight: 600;
+}
+fieldset {
+	padding: 0;
+	border-widt 0;
+}
+input[type="checkbox"], input[type="radio"] {
+	display: inline;
+}
+label&gt;.label-body {
+	display: inline-block;
+	margin-left: .5rem;
+	font-weight: normal;
+}
+/* Lists
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
+ul {
+	list-style: circle inside;
+}
+ol {
+	list-style: decimal inside;
+}
+ol, ul {
+	padding-left: 0;
+	margin-to 0;
+}
+ul ul, ul ol, ol ol, ol ul {
+	margin: 1.5rem 0 1.5rem 3rem;
+	font-size: 90%;
+}
+li {
+	margin-bottom: 1rem;
+}
+/* Code
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
+code {
+	padding: .2rem .5rem;
+	margin: 0 .2rem;
+	font-size: 90%;
+	white-space: nowrap;
+	background: #F1F1F1;
+	border: 1px solid #E1E1E1;
+	border-radius: 4px;
+}
+pre&gt;code {
+	display: block;
+	padding: 1rem 1.5rem;
+	white-space: pre;
+}
+/* Tables
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
+th, td {
+	padding: 12px 15px;
+	text-align: left;
+	border-bottom: 1px solid #E1E1E1;
+}
+tfirst-child, td:first-child {
+	padding-left: 0;
+}
+tlast-child, td:last-child {
+	padding-right: 0;
+}
+/* Spacing
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
+button, .button {
+	margin-bottom: 1rem;
+}
+input, textarea, select, fieldset {
+	margin-bottom: 1.5rem;
+}
+pre, blockquote, dl, figure, table, p, ul, ol, form {
+	margin-bottom: 2.5rem;
+}
+/* Utilities
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
+.u-full-width {
+	widt 100%;
+	box-sizing: border-box;
+}
+.u-max-full-width {
+	max-widt 100%;
+	box-sizing: border-box;
+}
+.u-pull-right {
+	float: right;
+}
+.u-pull-left {
+	float: left;
+}
+/* Misc
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€
+“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
+hr {
+	margin-to 3rem;
+	margin-bottom: 3.5rem;
+	border-widt 0;
+	border-to 1px solid #E1E1E1;
+}
+/* Clearing
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
+/* Self Clearing Goodness */
+.container:after, .row:after, .u-cf {
+	content: "";
+	display: table;
+	clear: both;
+}
+/* Media Queries
+â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ */
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
+/* Larger than mobile */
+@media ( min-width : 400px) {
+}
+/* Larger than phablet (also point when grid becomes active) */
+@media ( min-width : 550px) {
+}
+/* Larger than tablet */
+@media ( min-width : 750px) {
+}
+/* Larger than desktop */
+@media ( min-width : 1000px) {
+}
+/* Larger than Desktop HD */
+@media ( min-width : 1200px) {
+}
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0;
+}
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox &lt; 22.
+ */
+[hidden],
+template {
+  display: none;
+}
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+/* Text-level semantics
+ ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold;
+}
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic;
+}
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000;
+}
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  to -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0;
+}
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px;
+}
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto;
+}
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+  margin: 0; /* 3 */
+}
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible;
+}
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none;
+}
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal;
+}
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; /* 2 */
+  box-sizing: content-box;
+}
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0; /* 1 */
+  padding: 0; /* 2 */
+}
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto;
+}
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold;
+}
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+</style>
+</head>
+<h:body>
+	<header class="header">
+		
+<div class="container container-header">
+			
+<div class="header-brand-wrapper">
+				<a class="header-brand" href="index.html">AMK CARS</a>
+			</div>
+			<nav class="header-navbar">
+				
+<ul class="header-navbar-liste">
+					
+<li><a href="#">Home</a></li>
+					
+<li><a href="#kaufen">Kaufen</a></li><a href="#kaufen">
+					</a>
+					
+<li><a href="#verkaufen">Verkaufen</a></li><a href="#verkaufen">
+					</a>
+					
+<li><a href="#services">Services</a></li><a href="#services">
+					</a>
+					
+<li><a href="#kunden">Kunden</a></li><a href="#kunden">
+					</a>
+					
+<li><a href="#bewerten">Bewerten</a></li><a href="#bewerten">
+					</a>
+					
+<li><a href="#contact">Kontakt</a></li><a href="#contact">
+					</a>
+					
+				</ul>
+		</nav></div>
+		
+<div class="container">
+			
+<div class="checkbox">
+				
+<table width="40%" style="float: left; height: 455px">
+					
+<tbody>
+<tr>
+						
+<td style="height: 487px; width: 424px">
+	<h:form style="width: 592px; color: #FEFFFF; ">
+Marke
+ 
+		
+<h:selectOneMenu onchange="form.submit()" value="#{liste.marke}" style="font-size: 20px; border-radius: 7px; height: 36px; margin: 0px 8px; width: 178px; color: #000000; right: 100px; ">
+			
+			<f:selectItem itemValue="Mercedes" />
+			<f:selectItem itemValue="BMW" />
+			<f:selectItem itemValue="Renault" />
+			<f:selectItem itemValue="Ferrari" />
+			<f:selectItem itemValue="Porsche" />
+			<f:selectItem itemValue="Audi" />
+			<f:selectItem itemValue="Volkswagen" />
+			<f:selectItem itemValue="Chevrolet" />
+		</h:selectOneMenu> PS(min)   	    
+
+     <h:inputText value="#{liste.ps}" style="font-size: 20px; border-radius: 7px; height: 36px; margin: 0px 8px; width: 178px; color: #000000; left: 500px; top: 100px; bottom: 600px; right: 400px" /><br/><br/>
+		
+	Getriebe	<h:selectOneMenu onchange="form.submit()" value="#{liste.getriebe}"
+			style="font-size: 20px; border-radius: 7px; height: 33px; margin: 0px 8px; width: 160px; color: #000000; ">
+			<f:selectItem itemValue="Automatik" />
+			<f:selectItem itemValue="Schaltgetriebe" />
+					</h:selectOneMenu> 
+						
+	Karosserieform	<h:selectOneMenu onchange="form.submit()" value="#{liste.karosserieform}"
+			style="height: 35px; width: 141px; color: #000000; ">
+			<f:selectItem itemValue="Limousine" />
+			<f:selectItem itemValue="Coupe" />
+			<f:selectItem itemValue="Cabrio" />
+			<f:selectItem itemValue="Kombi" />
+			<f:selectItem itemValue="Kleinwagen" />
+			<f:selectItem itemValue="Gelaendewagen" />
+					</h:selectOneMenu> 		
+	<br/><br/>				
+			
+	Preis	(max) <h:inputText value="#{liste.preis}" style="font-size: 20px; border-radius: 7px; height: 36px; margin: 0px 8px; width: 148px; color: #000000; "/>
+		
+Erstzulassung(min)		<h:inputText value="#{liste.erstzulassung}" style="font-size: 20px; border-radius: 7px; height: 36px; margin: 0px 8px; width: 107px; color: #000000; "/>
+		<br/><br/>
+	Modell	<h:inputText value="#{liste.modell}" style="font-size: 20px; border-radius: 7px; height: 36px; margin: 0px 8px; width: 176px; color: #000000; "/>
+		
+	Stadt	<h:inputText value="#{liste.stadt}" style="font-size: 20px; border-radius: 7px; height: 36px; margin: 0px 8px; width: 200px; color: #000000; "/>
+					<br/><br/>
+	Kraftstoff<h:selectOneMenu onchange="form.submit()" value="#{liste.kraftstoff}"
+			style="font-size: 20px; border-radius: 7px; height: 36px; margin: 0px 8px; width: 163px; color: #000000; ">
+			<f:selectItem itemValue="Benzin" />
+			<f:selectItem itemValue="Diesel" />
+			<f:selectItem itemValue="Elektro" />
+			</h:selectOneMenu>
+
+	Kilometerstand(max)		
+		<h:inputText value="#{liste.kilometerstand}" style="font-size: 20px; border-radius: 7px; height: 36px; margin: 0px 8px; width: 100px; color: #000000; " /><br/><br/>
+		
+		<h:commandButton value="Suchen"
+			style="font-size: 130%; width: 366px; color: #FEFFFF"
+			actionListener="#{liste.search}" /> &#160;&#160;
+
+<h:commandButton value="Einfügen"
+			style="font-size: 130%; width: 366px; color: #FEFFFF"
+			actionListener="#{liste.einfügen}" /> &#160;&#160;
+			
+	</h:form>
+	</td></tr></tbody></table>
+			</div>
+			<br /><br /><br /><h:form>
+			 <table>
+                <tr>
+                    <td><h:outputText value="Enter Your First Name:" style="color: #FEFFFF"/></td>
+                    <td><h:inputText id="fname" value="#{user.firstName}"
+                            required="true" requiredMessage="Please enter your first name" /></td>
+                    <td><h:message for="fname" style="color:red" /></td>
+                </tr>
+                <tr>
+                    <td><h:outputText value="Enter Your Last Name:" style="color: #FEFFFF"/></td>
+                    <td><h:inputText id="lname" value="#{user.lastName}"
+                            required="true" requiredMessage="Please enter your last name" /></td>
+                    <td><h:message for="lname" style="color:red" /></td>
+                </tr>
+                <tr>
+                    <td><h:outputText value="Enter Your email ID:" style="color: #FEFFFF"/></td>
+                    <td><h:inputText id="email" value="#{user.email}"
+                            required="true" requiredMessage="Please enter your email id" /></td>
+                    <td><h:message for="email" style="color:red" /></td>
+                </tr>
+                <tr>
+                    <td><h:outputText value="Enter Password :" style="color: #FEFFFF"/></td>
+                    <td><h:inputSecret id="psw" value="#{user.password}"
+                            required="true" requiredMessage="Please enter your password" /></td>
+                    <td><h:message for="psw" style="color:red" /></td>
+                </tr>
+                <tr>
+                    <td />
+                    <td><h:commandButton value="Register" action="#{user.add}" /></td>
+                </tr>
+                
+            </table>
+</h:form>
+			
+			<h:form id="loginForm">
+            <table frame="box">
+                <tr>
+                    <th>Login Page</th>
+                </tr>
+                <tr>
+                    <td><h:outputText value="Enter Your Name : " /></td>
+                    <td><h:inputText id="inputName" value="#{user.firstName}"
+                            required="true" requiredMessage="Name field must not be empty" />
+                    </td>
+                    <td><h:message for="inputName" style="color:red" /></td>
+                </tr>
+                <tr>
+                    <td><h:outputText value="Enter password :" /></td>
+                    <td><h:inputSecret id="inputPassword" value="#{user.password}"
+                            required="true"
+                            requiredMessage="Password field must not be empty" /></td>
+                    <td><h:message for="inputPassword" style="color:red" /></td>
+                </tr>
+                <tr>
+                    <td><h:commandButton value="Sign In" action="#{user.login}" /></td>
+                    
+                </tr>
+            </table>
+        </h:form>
+			
+			
+<div class=" slogan">
+				
+<div class="slogan-top">Jetzt Fahrzeug</div>
+				
+<div class="slogan-buttom">Bewerten</div>
+				<button class="slogan-button">
+					<a href="#bewerten"> Mehr Erfahren</a>
+				</button>
+			</div>
+		</div>
+		
+	</header>
+	
+<div class="service" id="kaufen">
+		
+<div class="container">
+			
+<div class="row">
+				
+<div class="eight columns">
+					
+<div class="feature-text">								
+			<h:form>
+						
+<h1>Autos nach der Suche</h1>
+		<p:dataTable var="au" value="#{liste.autos}">
+			<p:column headerText="Preis">
+				<h:outputText value="#{au.preis}" />
+			</p:column>
+			<p:column headerText="Marke">
+				<h:outputText value="#{au.marke}" />
+			</p:column>
+			<p:column headerText="Erstzulassung">
+				<h:outputText value="#{au.erstzulassung}" />
+			</p:column>
+			<p:column headerText="Modell">
+				<h:outputText value="#{au.modell}" />
+			</p:column>
+			<p:column headerText="Stadt">
+				<h:outputText value="#{au.stadt}" />
+			</p:column>
+			<p:column headerText="Kraftstoff">
+				<h:outputText value="#{au.kraftstoff}" />
+			</p:column>
+			<p:column headerText="Getriebe">
+				<h:outputText value="#{au.getriebe}" />
+			</p:column>
+			<p:column headerText="Karosserieform">
+				<h:outputText value="#{au.karosserieform}" />
+			</p:column>
+			<p:column headerText="Kilometerstand">
+				<h:outputText value="#{au.kilometerstand}" />
+			</p:column>
+			<p:column headerText="PS">
+				<h:outputText value="#{au.ps}" />
+			</p:column>
+						<p:column headerText="Foto">
+						<h:commandLink value="#{au.autoid}"
+					action="#{liste.foto}">
+					<f:setPropertyActionListener value="#{au.autoid}"
+						target="#{liste.autoid}" />
+				</h:commandLink>
+						</p:column>
+			
+			</p:dataTable>
+			</h:form>
+					
+					</div>
+					
+
+				</div>
+				
+<div class="four columns">
+					
+<div class="service-icon">
+						<i class="fas fa-car" />
+					</div>
+				</div>
+				
+
+			</div>
+		</div>
+	</div>
+	
+<div class="service service-gray" id="verkaufen">
+		
+<div class="container">
+			
+<div class="row">
+				
+<div class="six columns">
+					
+<div class="service-icon-zwei">
+						<i class="fas fa-money-bill-wave" />
+					</div>
+				</div>
+				
+<div class="six columns">
+					
+<h3>
+						Fahrzeuge <strong>Verkaufen</strong>
+					</h3>
+					
+<div class="Fahrzeug-Verkaufen-check">
+						
+<p>
+							<i class="fas fa-check-circle" /> Tausende
+							Interessenten erreichen
+						</p>
+						
+<p>
+							<i class="fas fa-check-circle" /> Einfach und
+							schnell Inserat erstellen
+						</p>
+						
+<p>
+							<i class="fas fa-check-circle" /> Möglichkeit
+							Autos bestmöglich zu beschreiben
+						</p>
+						
+<p>
+							<i class="fas fa-check-circle" /> Zusätzliche
+							Optionen für bessere Platzierung
+						</p>
+						
+<p>
+							<i class="fas fa-check-circle" /> Autos zum
+							optimalen Preis verkaufen
+						</p>
+						
+<p>
+							<i class="fas fa-check-circle" /> Käufe
+							eigenständig abwickeln
+						</p>
+						
+<p>
+<i class="fas fa-check-circle" /> Service
+							rund um die Uhr
+						</p>
+					</div>
+					
+<div class="zurück-zu-home">
+						
+<p>
+							<a href="#">Nach oben</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<div class="features" id="services">
+		
+<div class="container">
+			
+<div class="row">
+				
+<div class="six columns">
+					
+<div class="feature-icon">
+						<i class="far fa-thumbs-up" />
+					</div>
+					
+<div class="feature-text">
+						
+<h5>Genau das richtige Fahrzeug</h5>
+						
+<p>
+							Entscheiden Sie aus über 1.Tausend <br /> Fahrzeugen selber über welche
+							Konfiguration<br /> Ihr Fahrzeug verfügen soll und welche nicht<br /> Lassen
+							Sie sich individuell beraten
+						</p>
+					</div>
+				</div>
+				
+<div class="six columns">
+					
+<div class="feature-icon">
+						<i class="fas fa-car" />
+					</div>
+					
+<div class="feature-text">
+						
+<h5>Fahrzeuge jeder Art</h5>
+						
+<p>
+							Egal, ob Neuwagen oder Gebrauchtfahrzeug <br /> Auf AMK KARS ist für
+							jeden etwas dabei.<br /> Hier finden Sie gebrauchte Autos in allen
+							Preis-<br /> und Fahrzeugkategorien: Kleinwagen, Limousinen, <br /> Kombi,
+							Van/Kleinbus, SUV, Oldtimer oder Transporter<br /> AMK Kars lässt keine
+							Wünsche öffen!
+					</p></div>
+				</div>
+			</div>
+			
+<div class="row">
+				
+<div class="six columns">
+					
+<div class="feature-icon">
+						<i class="fas fa-lock" />
+					</div>
+					
+<div class="feature-text">
+						
+<h5>Unabhängige Plattform</h5>
+						
+<p>
+							AMK Kars agiert ganz unabhängig und transparent.<br /> Das
+							Bewerten von anderen Käufern ermöglicht<br /> eine weitgehend
+							realistische Einschätzung<br /> der Händler und Anbieter
+						</p>
+					</div>
+				</div>
+				
+<div class="six columns">
+					
+<div class="feature-icon">
+						<i class="fas fa-balance-scale" />
+					</div>
+					
+<div class="feature-text">
+						
+<h5>Umfangsreicher Service</h5>
+						
+<p>
+							AMK KARS erleichtet Ihnen nicht nur die <br /> Fahrzeugsuche. Wir
+							unterstützen Sie auch dabei, <br />Ihre Käufe oder Verkäufe
+							ordnungsgemäß und sicher<br /> abzuwickeln. Damit man auch im
+							Nachhinein einen kühlen bewahrt, stellen wir Kaufverträge zu
+							verfügung, womit Sie formel und rechtlich auf der sicheren Seite
+							stehen.
+						</p>
+					</div>
+				</div>
+				
+<div class="row">
+					
+<div class="six columns">
+						
+<div class="feature-icon">
+							<i class="fas fa-info" />
+						</div>
+						
+<div class="feature-text">
+							
+<h5>Volle Information &amp; Transparenz</h5>
+							
+<p>
+								Tagesaktuelle Marktdaten zum Preis- <br /> Leistungs-Verhältnis und
+								die kostenlose Online-<br /> Fahrzeugbewertung bieten Ihnen
+								Preistranzparenz.
+							</p>
+						</div>
+					</div>
+					
+<div class="six columns">
+						
+<div class="feature-icon">
+							<i class="fas fa-money-bill-wave" />
+						</div>
+						
+<div class="feature-text">
+							
+<h5>Volle Information &amp; Transparenz</h5>
+							
+<p>
+								Entscheiden Sie aus über 1.Tausend <br /> Fahrzeugen selber welche Konfiguration<br /> Ihr Fahrzeug verfügen soll und welche nicht<br /> Lassen
+								Sie sich individuell beraten
+							</p>
+						</div>
+						
+<div class="zurück-zu-home">
+							
+<p>
+								<a href="#">Nach oben</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+<div class="bewerten" id="bewerten" />
+	
+<div class="contact" id="contact">
+		
+<div class="container">
+			
+<div class="row">
+				
+<div class="six columns">
+					
+<h2 class="contact-heading">
+						Say <strong>Hello</strong>
+					</h2>
+					
+<p class="contact-subheading">
+						Sie können uns jederzeit über dieses Kontaktformular erreichen!<br />
+						Wir nehmen Ihre Anfragen sehr gerne entgegen :)
+					</p>
+					
+<ul class="contact-methods">
+						
+<li><span class="contact-icon"> <i class="fas fa-mobile-alt" />
+						</span> +49 81726372</li>
+						
+<li><span class="contact-icon"> <i class="fas fa-envelope" />
+						</span> amk-cars@hallo.de</li>
+						
+<li><span class="contact-icon"> <i class="fab fa-twitter" />
+						</span> @Amk_Cars</li>
+						
+<li><span class="contact-icon"> <i class="fab fa-google-plus" />
+						</span> plus.google.com</li>
+						
+<li><span class="contact-icon"> <i class="fab fa-facebook" />
+						</span> facebook.com</li>
+						
+<li><span class="contact-icon"> <i class="fab fa-instagram" />
+						</span> instagram.com</li>
+					</ul>
+				</div>
+				
+<div class="six columns">
+					
+						<input class="contact-input" type="text" placeholder="Dein Name*" required="required" style="font-size: 20px; border-radius: 7px; height: 36px; margin: 0px 8px; width: 150px;" /> 
+						<input class="contact-input" type="text" placeholder="Deine Email*" required="required" style="font-size: 20px; border-radius: 7px; height: 36px; margin: 0px 8px; width: 150px;"/>
+						<textarea class="contact-input contact-message" placeholder="Deine Nachricht*" required="required" />
+						<input class="contact-submit" type="submit" value="Nachricht Senden" />
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<div class="footer">
+		
+<div class="container">
+			
+<hr class="footer-hr" />
+			
+<p>
+				<i class="far fa-copyright" /> Copyright 2018 AmkCars GmbH.
+				Alle Rechte vorbehalten.<a href="#">Nach
+					oben</a>
+			</p>
+		</div>
+	</div>
+</h:body>
+</html>
